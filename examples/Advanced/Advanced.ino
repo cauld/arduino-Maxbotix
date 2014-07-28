@@ -39,7 +39,7 @@ void loop()
   start = millis();
   Serial.print("PW (BEST): ");
   Serial.print(rangeSensorPW.getRange());
-  Serial.print("cm - ");
+  Serial.print("inches - ");
   Serial.print(millis() - start);
   Serial.print("ms - ");
   printArray(rangeSensorPW.getSample(), rangeSensorPW.getSampleSize());
@@ -57,7 +57,7 @@ void loop()
   start = millis();
   Serial.print("AD (BEST): ");
   Serial.print(rangeSensorAD.getRange());
-  Serial.print("cm - ");
+  Serial.print("inches - ");
   Serial.print(millis() - start);
   Serial.print("ms - ");
   printArray(rangeSensorAD.getSample(), rangeSensorAD.getSampleSize());

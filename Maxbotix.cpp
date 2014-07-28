@@ -133,7 +133,7 @@ float Maxbotix::readSensor()
         switch (model)
         {
         case LV:
-            result = toCentimeters(pulseIn(pin, HIGH) / 147.0);
+            result = toInches(pulseIn(pin, HIGH) / 147.0);
             break;
         case XL:
             result = pulseIn(pin, HIGH) / 58.0;
@@ -149,7 +149,7 @@ float Maxbotix::readSensor()
         switch (model)
         {
         case LV:
-            result = toCentimeters(analogRead(pin) / 2.0);
+            result = toInches(analogRead(pin) / 2.0);
             break;
         case XL:
             result = analogRead(pin);

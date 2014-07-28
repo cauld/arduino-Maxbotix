@@ -9,7 +9,7 @@
   HRLV supported)
 
   Note:
-  For convenience, the getRange method will always return centimeters.
+  For convenience, the getRange method will always return inches.
   You can use convert fuctions to convert to another unit (toInches and
   toCentimeters are available)
 
@@ -34,7 +34,7 @@ void loop()
   start = millis();
   Serial.print("PW: ");
   Serial.print(rangeSensorPW.getRange());
-  Serial.print("cm - ");
+  Serial.print("inches - ");
   Serial.print(millis() - start);
   Serial.println("ms");
   
@@ -42,7 +42,7 @@ void loop()
   start = millis();
   Serial.print("AD: ");
   Serial.print(rangeSensorAD.getRange());
-  Serial.print("cm - ");
+  Serial.print("inches - ");
   Serial.print(millis() - start);
   Serial.println("ms");
   
