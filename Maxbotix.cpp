@@ -8,12 +8,6 @@ Maxbotix::Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, 
     init();
 }
 
-Maxbotix::Maxbotix(Stream* serial, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter, uint8_t sample_size) :
-    input(TX), model(model), serial(serial), filter(filter), sample_size(sample_size)
-{
-    init();
-}
-
 
 void Maxbotix::init()
 {
@@ -162,22 +156,6 @@ float Maxbotix::readSensor()
             break;
         case HRLV:
             result = analogRead(pin) * 5.0 / 10.0;
-            break;
-        default:
-            break;
-        }
-        break;
-    case TX:
-        switch (model)
-        {
-        case LV:
-            result = toCentimeters(readSensorSerial(3));
-            break;
-        case XL:
-            result = readSensorSerial(3);
-            break;
-        case HRLV:
-            result = readSensorSerial(4) / 10.0;
             break;
         default:
             break;

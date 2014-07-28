@@ -39,7 +39,6 @@ public:
     // init/delete
     Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter = NONE,
              uint8_t sample_size = 0);
-    Maxbotix(Stream* serial, MAXBOTIX_MODEL_t model, MAXBOTIX_FILTER_t filter = NONE, uint8_t sample_size = 0);
     ~Maxbotix();
 
     // simple api
