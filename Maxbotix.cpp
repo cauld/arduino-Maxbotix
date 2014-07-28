@@ -4,15 +4,7 @@ Maxbotix::Maxbotix(uint8_t pin, MAXBOTIX_INPUT_t input, MAXBOTIX_MODEL_t model, 
                    uint8_t sample_size) :
     pin(pin), input(input), model(model), filter(filter), sample_size(sample_size)
 {
-    if (input == TX)
-    {
-        serial = new RxSoftwareSerial(pin, true);
-        ((RxSoftwareSerial*)serial)->begin(9600);
-    }
-    else
-    {
-        pinMode(pin, INPUT);
-    }
+    pinMode(pin, INPUT);
     init();
 }
 

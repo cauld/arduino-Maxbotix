@@ -2,7 +2,6 @@
 #define Maxbotix_h
 
 #include <Arduino.h>
-#include "RxSoftwareSerial.h"
 
 class Maxbotix
 {

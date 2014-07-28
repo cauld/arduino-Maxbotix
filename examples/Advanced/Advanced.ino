@@ -20,7 +20,6 @@
 #include "Maxbotix.h"
 
 Maxbotix rangeSensorPW(8, Maxbotix::PW, Maxbotix::LV, Maxbotix::BEST);
-Maxbotix rangeSensorTX(6, Maxbotix::TX, Maxbotix::LV, Maxbotix::MEDIAN);
 Maxbotix rangeSensorAD(A0, Maxbotix::AN, Maxbotix::LV, Maxbotix::BEST, 9);
 
 void setup()
@@ -52,24 +51,6 @@ void loop()
   Serial.print(rangeSensorPW.getSampleMedian());
   Serial.print(" - Best: ");
   Serial.print(rangeSensorPW.getSampleBest());
-  Serial.println();
-  
-  // TX
-  start = millis();
-  Serial.print("TX (MEDIAN): ");
-  Serial.print(rangeSensorTX.getRange());
-  Serial.print("cm - ");
-  Serial.print(millis() - start);
-  Serial.print("ms - ");
-  printArray(rangeSensorTX.getSample(), rangeSensorTX.getSampleSize());
-  Serial.print(" - Highest Mode: ");
-  Serial.print(rangeSensorTX.getSampleMode(true));
-  Serial.print(" - Lowest Mode: ");
-  Serial.print(rangeSensorTX.getSampleMode(false));
-  Serial.print(" - Median: ");
-  Serial.print(rangeSensorTX.getSampleMedian());
-  Serial.print(" - Best: ");
-  Serial.print(rangeSensorTX.getSampleBest());
   Serial.println();
   
   // AD
